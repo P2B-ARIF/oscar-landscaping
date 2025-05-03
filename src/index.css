@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+	/* colors */
+	--color-primary: #348e38;
+	--color-secondary: #0f4229;
+	/* --color-accent: #f8fbfc; */
+	--color-accent: #f7fdfa;
+	--color-gray: #525368;
+	--color-dark: #001f3f;
+
+	/* fonts */
+	--font-primary: "Rubik", sans-serif;
+	--font-secondary: "Jost", sans-serif;
+
+	/* breakpoint */
+	/* --breakpoint-xl: 1400px; */
+	--breakpoint-2xl: 1400px;
+}
+
+body {
+	font-family: var(--font-primary);
+	scroll-behavior: smooth;
+}
+
+/* font-family: "Poetsen One", sans-serif; */
+/* font-family: "Quicksand", sans-serif; */
