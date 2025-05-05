@@ -5,265 +5,110 @@ export default defineType({
   title: 'About Page',
   type: 'document',
   groups: [
-    {name: 'hero', title: 'Hero Section'},
-    {name: 'mission', title: 'Mission Statement'},
-    {name: 'approach', title: 'Approach Section'},
-    {name: 'services', title: 'Service Overview'},
-    {name: 'grid', title: 'Services Grid'},
+    {name: 'getintouch', title: 'Get In Touch Section'},
     {name: 'experience', title: 'Experience Section'},
-    {name: 'social', title: 'Social Media'},
   ],
   fields: [
-    // Hero Section
+    // Get In Touch Section
     {
-      name: 'hero',
-      title: 'Hero',
+      name: 'getintouch',
+      title: 'Get In Touch Section',
       type: 'object',
-      group: 'hero',
+      group: 'getintouch',
       fields: [
         {
           name: 'title',
-          title: 'Main Title',
+          title: 'Title',
           type: 'string',
-          initialValue: 'About Us',
-        },
-        {
-          name: 'subtitle',
-          title: 'Subtitle',
-          type: 'string',
-          initialValue: 'Your Trusted Partner for Home and Landscape Transformations',
-        },
-      ],
-    },
-
-    // Mission Statement
-    {
-      name: 'mission',
-      title: 'Mission',
-      type: 'object',
-      group: 'mission',
-      fields: [
-        {
-          name: 'content',
-          title: 'Content',
-          type: 'text',
-          rows: 4,
-          initialValue:
-            'A focus on the implementation, we prepare to attach highly structured materials to our home industry. To ensure that a new family is committed to creating a safe and inclusive environment in relation to future projects.',
-        },
-      ],
-    },
-
-    // Approach Section
-    {
-      name: 'approach',
-      title: 'Approach',
-      type: 'object',
-      group: 'approach',
-      fields: [
-        {
-          name: 'title',
-          title: 'Section Title',
-          type: 'string',
-          initialValue: 'Our approach to adults',
-        },
-        {
-          name: 'points',
-          title: 'Bullet Points',
-          type: 'array',
-          of: [{type: 'string'}],
-          initialValue: [
-            'Create activities to enhance',
-            'Enhance your professional skills and wellbeing,',
-            'Foster relationships with our communities.',
-          ],
+          initialValue: 'Your Full-Service Home and Landscape Experts',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'description',
-          title: 'Additional Text',
+          title: 'Description',
           type: 'text',
-          rows: 3,
           initialValue:
-            'Provide an existing and easy practice, connecting our families to local communities and providing opportunities for individuals. Explore any particular ways to maintain adequate living conditions.',
-        },
-      ],
-    },
-
-    // Service Overview
-    {
-      name: 'serviceOverview',
-      title: 'Service Overview',
-      type: 'object',
-      group: 'services',
-      fields: [
-        {
-          name: 'title',
-          title: 'Section Title',
-          type: 'string',
-          initialValue: 'Your Full-Service Home and Landscape',
+            'Ready to start your landscaping or home improvement project? We"re here to help. Contact us today for a free estimate and personalized consultation.',
+          validation: (Rule) => Rule.required(),
         },
         {
-          name: 'content',
-          title: 'Content',
+          name: 'experienceText',
+          title: 'Experience Text',
           type: 'text',
-          rows: 4,
           initialValue:
-            'We are also working with our home-based organizations, including the University of South Carolina, the University of New York, and the University of Southern California.',
+            'Lorem Ipsum is simply dummy text of free available market type setting industry',
+          validation: (Rule) => Rule.required(),
         },
         {
-          name: 'subSection',
-          title: 'Home & Landscape',
-          type: 'object',
-          fields: [
-            {
-              name: 'title',
-              title: 'Subtitle',
-              type: 'string',
-              initialValue: 'Home Home & Landscape',
-            },
-            {
-              name: 'content',
-              title: 'Content',
-              type: 'text',
-              rows: 3,
-              initialValue:
-                'Our home and landscape are built by our community and our people, as well as our community and community partners.',
-            },
-          ],
+          name: 'rightImage',
+          title: 'Right Side Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
 
-    // Services Grid
-    {
-      name: 'servicesGrid',
-      title: 'Services Grid',
-      type: 'object',
-      group: 'grid',
-      fields: [
-        {
-          name: 'title',
-          title: 'Section Title',
-          type: 'string',
-          initialValue: 'From Fresh Paint to Fresh Sod – We’ve Got You Covered',
-        },
-        {
-          name: 'columns',
-          title: 'Service Columns',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                {
-                  name: 'title',
-                  title: 'Column Title',
-                  type: 'string',
-                },
-                {
-                  name: 'services',
-                  title: 'Services',
-                  type: 'array',
-                  of: [
-                    {
-                      type: 'object',
-                      fields: [
-                        {
-                          name: 'title',
-                          title: 'Service Title',
-                          type: 'string',
-                        },
-                        {
-                          name: 'description',
-                          title: 'Description',
-                          type: 'string',
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-          initialValue: [
-            {
-              title: 'Innerive Painting',
-              services: [
-                {
-                  title: 'Paint space',
-                  description: 'Smooth texture and open texture areas',
-                },
-              ],
-            },
-            {
-              title: 'Refresour Remodeling',
-              services: [
-                {
-                  title: 'Refresour options',
-                  description: 'Use fabrics like using and smooth materials',
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-    // Experience Section
     {
       name: 'experience',
-      title: 'Experience',
-      type: 'object',
+      title: 'Experience Section',
+      type: 'document',
       group: 'experience',
       fields: [
         {
-          name: 'content',
-          title: 'Content',
+          name: 'bgImage',
+          title: 'Background Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          initialValue: 'We are nice people with a lot of experience.',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'description',
+          title: 'Description',
           type: 'text',
           rows: 3,
           initialValue:
-            'We are nice people with a lot of experience. Our HR has grown up from 100% in the world, and we have been enjoying these delicious experiences.',
-        },
-      ],
-    },
-
-    // Social Media
-    {
-      name: 'socialMedia',
-      title: 'Social Media',
-      type: 'object',
-      group: 'social',
-      fields: [
-        {
-          name: 'title',
-          title: 'Section Title',
-          type: 'string',
-          initialValue: 'Contact us with:',
+            'Junk MTV quiz graced by fox whelps.\nBawds jog, flick quartz, vex nymphs.\nWaltz, bad nymph',
+          validation: (Rule) => Rule.required(),
         },
         {
-          name: 'links',
-          title: 'Social Links',
+          name: 'stats',
+          title: 'Statistics',
           type: 'array',
           of: [
             {
               type: 'object',
               fields: [
                 {
-                  name: 'platform',
-                  title: 'Platform',
+                  name: 'value',
+                  title: 'Value',
                   type: 'string',
+                  initialValue: '10+',
                 },
                 {
-                  name: 'url',
-                  title: 'URL',
-                  type: 'url',
+                  name: 'label',
+                  title: 'Label',
+                  type: 'string',
+                  initialValue: 'Years of Experience',
                 },
               ],
             },
           ],
           initialValue: [
-            {platform: 'Facebook', url: 'www.facebook.com/facebookresearch'},
-            {platform: 'Twitter', url: 'www.twitter.com/facebookresearch'},
+            {value: '10+', label: 'Years of Experience'},
+            {value: '100+', label: 'Projects Completed'},
+            {value: '50+', label: 'Happy Clients'},
           ],
         },
       ],
